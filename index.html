@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 
 
@@ -134,6 +135,50 @@
 <div id="ac-gn-placeholder" class="ac-nav-placeholder"></div>
 
 
+<script type="text/javascript" src="https://www.apple.com/ac/globalnav/2.0/en_US/scripts/ac-globalnav.built.js"></script>
+</script>
+    
+
+
+
+
+
+
+    
+    
+        
+            
+            
+                
+                    
+                    
+                        
+                            
+                            
+                                
+                                    
+                                        <script type="text/javascript"
+                                                src="https://appleid.cdn-apple.com/appleauth/static/jsapi/authService.latest.min.js"></script>
+                                    
+                                    
+                                
+                            
+                        
+                    
+                
+            
+        
+    
+
+
+
+
+    
+    
+        <script type="text/javascript" src="https://appleid.cdn-apple.com/static/jsj/1858172849/common-header.js" ></script>
+
+    
+
 
 
 </head>
@@ -146,6 +191,96 @@
     <div id="unauthdata">
         
 
+
+
+<script type="text/stache" id="jstache_1228408218">
+
+
+<div class="app-container">
+    {{#eq page 'signin'}}
+        {{#showBanner}}
+            
+        {{/showBanner}}
+    {{/if}}
+    <applenav></applenav>
+    <subnav {(page)}="page"></subnav>
+    <hero {(page)}="page">
+    </hero>
+    <div id="app-content">
+      {{#is page "create"}}
+        <div id="flow">
+          <create-control {(page)}="page" {(page-mode)}="pageMode"></create-control>
+        </div>
+      {{/is}}
+      {{#is page "faq"}}
+          <faq {(page)}="page"></faq>
+      {{/is}}
+      {{#is page "signin"}}
+          <div id="forgot-link" class="forgot">
+              <a href="{{iForgotLinkUrl}}" title='{{iforgotLinkTitle}}' role="link">
+                  Forgot Apple ID or password?
+              </a>
+          </div>
+          <signin {(page)}="page"></signin>
+      {{/is}}
+    </div>
+
+    <footer></footer>
+</div>
+
+</script>
+<script type="text/stache" id="jstache_1560814196">
+
+
+{{#bannerMessage}}
+    <div class="alert notice-wrapper" role="alert">
+        <div class="notice">
+          <div class="alert-content">
+            <button class="alert-close" role="button" aria-label="close">x</button>
+            {{bannerMessage}}
+          </div>
+        </div>
+    </div>
+{{/bannerMessage}}
+
+</script>
+<script type="text/stache" id="jstache_799724660">
+
+
+<div class="hero{{#is page 'signin'}} signin{{/is}}{{^page}} signin{{/if}}{{#eq page 'manage'}} manage{{/is}}{{#is page 'create'}} create{{/is}}">
+    {{#eq page "create"}}
+        <div class="container">
+            <h1>Create Your Apple&nbsp;ID</h1>
+        </div>
+    {{else}}
+        {{#eq page "faq"}}
+            <div class="container">
+                <h1>Frequently Asked Questions</h1>
+            </div>
+        {{else}}
+            <h1 class="sr-only">Apple&nbsp;ID</h1>
+        {{/if}}
+    {{/if}}
+    {{#is page "signin"}}
+        <div id="authWidgetContainer" class="auth-widget-container"></div>
+    {{else}}
+        <content/>
+    {{/is}}
+
+</div>
+
+</script>
+<script type="text/stache" id="jstache_1151847624">
+
+
+{{#if createLoading }}
+    <div class="create-control">
+        <div class="spin-wrap"></div>
+        <spinner class="spinner-wrapper" anchor-element=".spin-wrap" show="{createLoading}"></spinner>
+    </div>
+{{/if}}
+</script>
+<script type="text/stache" id="jstache_1856329015">
 
 
 
